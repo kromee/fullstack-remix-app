@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/components/layout.tsx", "../../../app/components/textfield.tsx"],
+  "sourcesContent": ["export function Layout({ children }: { children: React.ReactNode }) {\n  return <div className=\"h-screen w-full bg-yellow-100\">{children}</div>\n}", "interface FormFieldProps {\n  htmlFor: string\n  label: string\n  type?: string\n  value: string\n  onChange?: (...args: any) => any\n}\n\nexport function Textfield({ htmlFor, label, type = 'text', value, onChange = () => {} }: FormFieldProps) {\n  return (\n    <>\n      <label htmlFor={htmlFor} className=\"text-gray-600 font-semibold\">\n        {label}\n      </label>\n      <input\n        onChange={onChange}\n        type={type}\n        id={htmlFor}\n        name={htmlFor}\n        className=\"w-full p-2 rounded-xl my-2 border border-gray-300\"\n        value={value}\n      />\n    </>\n  )\n}"],
+  "mappings": ";;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACS;AADF,SAAS,OAAO,EAAE,SAAS,GAAkC;AAClE,SAAO,mDAAC,SAAI,WAAU,iCAAiC,YAAhD;AAAA;AAAA;AAAA;AAAA,SAAyD;AAClE;;;ACFA;AAAA;AAAA;AAAA;AAAA;AAUI,IAAAA,0BAAA;AAFG,SAAS,UAAU,EAAE,SAAS,OAAO,OAAO,QAAQ,OAAO,WAAW,MAAM;AAAC,EAAE,GAAmB;AACvG,SACE,wFACE;AAAA,wDAAC,WAAM,SAAkB,WAAU,+BAChC,mBADH;AAAA;AAAA;AAAA;AAAA,WAEA;AAAA,IACA;AAAA,MAAC;AAAA;AAAA,QACC;AAAA,QACA;AAAA,QACA,IAAI;AAAA,QACJ,MAAM;AAAA,QACN,WAAU;AAAA,QACV;AAAA;AAAA,MANF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAOA;AAAA,OAXF;AAAA;AAAA;AAAA;AAAA,SAYA;AAEJ;",
+  "names": ["import_jsx_dev_runtime"]
+}

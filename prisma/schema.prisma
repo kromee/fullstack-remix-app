@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int   @id @default(autoincrement()) 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String   @unique
+  password  String
+  name      String
+  task      Task[]
+}
+
+model  category {
+  category   String @id @default (uuid())
+}
+
+model Task {
+  id String @id @default (uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  message   String
+  categoryId  String 
+  taskId    Int   
+  postedBy  User     @relation(fields: [taskId], references: [id])
+}
+
+
